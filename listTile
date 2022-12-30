@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ListTile Örneği"),
+      ),
+      body: ListTile(
+        title: Text("Merhaba Dünya!"),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HelloPage(),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class HelloPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Merhaba Sayfası"),
+      ),
+      body: Center(
+        child: Text("Merhaba Dünya!"),
+      ),
+    );
+  }
+}
